@@ -1,0 +1,1 @@
+import '../vendorInit/swipers/swipers'

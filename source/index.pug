@@ -1,0 +1,17 @@
+extends pug/layout/main.pug
+
+block variables
+	- let nameCss = 'css/styles.min.css'
+	- let nameScript = 'js/script.min.js'
+	- let nameScriptVendors = 'js/vendors.min.js'
+	- let titleName = 'ВИЗР'
+	- let title = 'Главная'
+
+block mixins
+	include pug/mixins/mixin.pug
+block header
+	include pug/common/header.pug
+block main
+	include pug/sections/mainslider.pug
+block footer 
+	include pug/common/footer.pug

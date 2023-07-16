@@ -1,0 +1,24 @@
+@import 'variables'
+@import './../../mixins/text/text'
+
+.navigation
+	min-width: 100%
+	min-height: 50px
+	padding: 10px 20px
+
+	&__list
+		list-style-type: none
+		display: flex
+		justify-content: center
+		text-align: center
+		flex-wrap: wrap
+
+		&-item
+			&:not(:last-of-type)
+				margin-right: 10px
+		&-link
+			text-decoration: none
+			@include primary-text
+			@include states
+			&.base-text
+				color: $white

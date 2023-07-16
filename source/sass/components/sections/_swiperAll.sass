@@ -1,0 +1,59 @@
+@import 'variables'
+@import "./../../mixins/text/text"
+
+.swiper-slide 
+	max-width: 100%
+	img
+		object-fit: cover
+		width: 100%
+		height: auto
+
+.swiper-main
+	min-height: 200px
+	position: relative
+
+	@media screen and (min-width: 768px)
+		min-height: 400px
+
+	.swiper-slide
+		max-height: 600px
+		display: flex
+		align-items: center
+
+	.swiper-button-prev,
+	.swiper-button-next
+		width: 50px
+		height: 50px
+
+	.swiper-pagination-bullet
+		width: 15px
+		height: 15px
+		border: 1px solid $white
+
+		&.swiper-pagination-bullet-active
+			background-color: $green
+			border: 1px solid $white
+
+	.swiper-lazy-preloader
+		z-index: -1
+
+	.primary-title
+		position: absolute
+		bottom: 25px
+		z-index: 3
+		left: 50%
+		transform: translate(-50%, 0)
+		min-width: 100%
+		text-align: center
+		@include primary-text
+
+
+	&::before
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(to top, rgba(0, 56, 255, 0.5), rgba(0, 56, 255, 0.2))
+		z-index: 2
