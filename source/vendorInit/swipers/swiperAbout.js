@@ -1,3 +1,11 @@
+const swiperAboutEl = document.getElementById('#swiper-about');
+// const aboutInner = swiperAboutEl.querySelector(".about-section__inner");
+// const allAboutDesc = document.querySelectorAll("[data-sliderdesc]");
+let allAboutDesc = document.querySelectorAll('.about-section__description');
+let swiperSlide = document.querySelectorAll(".swiper-slide");
+let swiperDesc = [];
+let aboutDesc = [];
+
 const swiperAbout = new Swiper('.swiper-about', {
 	slidesPerView: 'auto',
 	spaceBetween: 0,
@@ -49,6 +57,36 @@ export let galleryTop = new Swiper(".gallery-top", {
 		swiper: galleryThumbs,
 	},
 });
+
+swiperSlide.forEach(el => {
+
+	if (el.dataset.desc) {
+		swiperDesc.push(el);
+	}
+})
+
+allAboutDesc.forEach(el => {
+	if (el.dataset.sliderdesc) {
+		aboutDesc.push(el);
+	}
+});
+
+if (swiperSlide) {
+
+	for (let i = 0; i <= swiperSlide.length; i++) {
+
+			if (swiperSlide[i] === aboutDesc[i]) {
+				swiperSlide[i].dataset.desc
+				console.log('123123')
+			}
+
+		}
+
+}
+
+
+
+
 
 export default {swiperAbout, galleryTop, galleryThumbs};
 
