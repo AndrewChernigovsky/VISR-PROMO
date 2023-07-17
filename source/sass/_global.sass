@@ -1,28 +1,61 @@
 @import "variables"
+@import "mixins/padding-margin/padding-margin"
+@import "mixins/states/_states"
+@import "mixins/text/text"
+
+html
+	height: 100%
 
 body
+	display: flex
+	flex-direction: column
+	height: 100%
+	width: 100%
 	font-family: $primary-font
-	background-color: $green
-	// background-image: url('../../img/decors/bg-image.png')
+	background-color: $green-03
 	background-position: center
+	background-image: url('../../img/decors/bg-image.png')
+	background-size: contain
+	margin: 0
 	background-repeat: repeat
-	background-size: contain auto
+	background-attachment: fixed
+
+	&::before
+		content: ''
+		position: fixed
+		display: block
+		background: linear-gradient($green-03, $green-08)
+		width: 100%
+		height: 100%
+		margin: 0
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		z-index: 1
 
 .container
+	display: flex
+	flex-direction: column
+	min-height: 100%
 	margin: 0 auto
 	padding: 0 10px
 	max-width: 1440px
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1)
+	position: relative
+	z-index: 2
 
-.visually-hidden 
+.main
+	flex-grow: 1
+
+.visually-hidden
 	position: absolute
 	width: 1px
 	height: 1px
 	margin: -1px
 	padding: 0
-	overflow: hidden
 	border: 0
 	clip: rect(0 0 0 0)
+	overflow: hidden
 
 .button,
 .link
@@ -30,41 +63,11 @@ body
 	min-height: 100px
 	font-size: 40px
 	cursor: pointer
-
-	&:focus
-		outline: 2px solid red
-	&:focus-visible
-		outline: 2px solid green
-	&:hover
-		outline: 2px solid grey
-	&:active
-		outline: 5px solid purple
-	
-	&.not-focus
-		&:focus-visible
-			outline: 2px solid green
-		&:focus
-			outline: 2px solid red
-		&:hover
-			outline: 2px solid grey
-		&:active
-			outline: 5px solid purple
-	
-	
-	&.not-focuss
-		&:focus-visible
-			outline: none
-		&:focus
-			outline: 2px solid red
-		&:hover
-			outline: 2px solid grey
-		&:active
-			outline: 5px solid purple
+	@include states-link-button
 
 .content
 	height: 100px
 	width: 200px
-
 
 	&:focus-within
 		background-color: yellow
@@ -73,3 +76,22 @@ body
 		width: 200px
 		height: 100px
 		display: inline-block
+
+img
+	max-width: 100%
+	object-fit: contain
+
+section.section
+	color: $white
+	text-align: center
+
+	@include section
+
+	h2.secondary-title
+		color: $white
+		font-family: $secondary-font
+		text-shadow: 2px 2px 2px $black
+
+.secondary-title
+	text-transform: uppercase
+	font-weight: 700

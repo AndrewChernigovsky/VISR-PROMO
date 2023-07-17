@@ -1,2 +1,2 @@
 import swiperMain from './swiperMain.js';
-import swiperALL from './swiperAll.js';
+import {swiperAbout, galleryThumbs, galleryTop} from './swiperAbout.js';
