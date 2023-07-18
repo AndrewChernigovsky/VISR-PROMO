@@ -7,6 +7,7 @@ import createWebp from './tasks/createWebp.js';
 import vendors from './vendors.js';
 import copy from './tasks/copy.js';
 import clean from './tasks/clean.js';
+import cleanImages from './tasks/cleanImages.js';
 import server from './tasks/server.js';
 import watcher from './tasks/watcher.js';
 import svg from './tasks/svg.js';
@@ -25,12 +26,18 @@ export const build = gulp.series(
 	gulp.parallel(sass2css, vendors, pug2html, scripts, svg, sprite, createWebp)
 );
 
+export const images = gulp.series(
+	cleanImages,
+	jimp,
+	copyImages
+)
+
 export default gulp.series(
 	clean,
-	jimp,
 	copy,
 	copyImages,
 	fonts,
 	gulp.parallel(sass2css, vendors, pug2html, scripts, svg, sprite, createWebp),
 	gulp.series(server, watcher)
 );
+

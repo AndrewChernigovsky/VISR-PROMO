@@ -1,4 +1,4 @@
-const swiperAboutEl = document.getElementById('#swiper-about');
+const swiperAboutEl = document.getElementById('swiper-about');
 // const aboutInner = swiperAboutEl.querySelector(".about-section__inner");
 // const allAboutDesc = document.querySelectorAll("[data-sliderdesc]");
 let allAboutDesc = document.querySelectorAll('.about-section__description');
@@ -6,7 +6,7 @@ let swiperSlide = document.querySelectorAll(".swiper-slide");
 let swiperDesc = [];
 let aboutDesc = [];
 
-const swiperAbout = new Swiper('.swiper-about', {
+const swiperAbout = new Swiper(swiperAboutEl, {
 	slidesPerView: 'auto',
 	spaceBetween: 0,
 	speed: 800,
@@ -35,58 +35,70 @@ const swiperAbout = new Swiper('.swiper-about', {
 		// 	spaceBetween: 100,
 		// },
 	},
+	on: {
+		slideChange() {
+		}
+	},
 });
-
-export let galleryThumbs = new Swiper(".gallery-thumbs", {
+const swiperAboutTh = new Swiper(".swiper-aboutThumbs", {
 	spaceBetween: 10,
 	slidesPerView: 4,
-	freeMode: true,
-	watchSlidesVisibility: true,
-	watchSlidesProgress: true,
-	touchRatio: 0.2,
-	slideToClickedSlide: true,
-});
-
-export let galleryTop = new Swiper(".gallery-top", {
-	spaceBetween: 10,
-	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
-	},
 	thumbs: {
-		swiper: galleryThumbs,
+		swiper: swiperAbout,
 	},
 });
 
-swiperSlide.forEach(el => {
-
-	if (el.dataset.desc) {
-		swiperDesc.push(el);
-	}
-})
-
-allAboutDesc.forEach(el => {
-	if (el.dataset.sliderdesc) {
-		aboutDesc.push(el);
-	}
+swiperAbout.on("slideChange", () => {
+	swiperAboutTh.slideTo(swiperAbout.activeIndex);
 });
+// export let galleryThumbs = new Swiper(".gallery-thumbs", {
+// 	spaceBetween: 10,
+// 	slidesPerView: 4,
+// 	freeMode: true,
+// 	watchSlidesVisibility: true,
+// 	watchSlidesProgress: true,
+// 	touchRatio: 0.2,
+// 	slideToClickedSlide: true,
+// });
 
-if (swiperSlide) {
+// export let galleryTop = new Swiper(".gallery-top", {
+// 	spaceBetween: 10,
+// 	navigation: {
+// 		nextEl: ".swiper-button-next",
+// 		prevEl: ".swiper-button-prev",
+// 	},
+// 	thumbs: {
+// 		swiper: galleryThumbs,
+// 	},
+// });
 
-	for (let i = 0; i <= swiperSlide.length; i++) {
+// swiperSlide.forEach(el => {
 
-			if (swiperSlide[i] === aboutDesc[i]) {
-				swiperSlide[i].dataset.desc
-				console.log('123123')
-			}
+// 	if (el.dataset.desc) {
+// 		swiperDesc.push(el);
+// 	}
+// })
 
-		}
+// allAboutDesc.forEach(el => {
+// 	if (el.dataset.sliderdesc) {
+// 		aboutDesc.push(el);
+// 	}
+// });
+
+if (swiperAbout) {
 
 }
 
+// swiperAbout.on('slideChange', function () {
+// 		console.log("slide changed");
+
+// 		console.log(swiperAbout.activeIndexChange);
+// });
+
+// console.log(swiperDesc);
+
+// console.log(aboutDesc)
 
 
-
-
-export default {swiperAbout, galleryTop, galleryThumbs};
+export default {swiperAbout};
 

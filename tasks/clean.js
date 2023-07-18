@@ -1,9 +1,11 @@
-import fs from 'fs';
+import fs from "fs";
+import del from "del";
 
 async function clean() {
-	return fs.rmSync('build', { recursive: true, force: true });
+	fs.access("./build", (err) => {
+		if (err) throw err;
+		return del(["./build/**", "!./build/img/**"], { force: true });
+	});
 }
-
-clean();
 
 export default clean;

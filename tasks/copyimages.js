@@ -8,7 +8,7 @@ function copyJimp() {
 	return gulp.src('source/images/**/*.{png,jpg}').pipe(gulp.dest('build/img'));
 }
 
-function copyImages() {
+async function copyImages() {
 	return (
 		copyJimp(),
 		copyImages1()
