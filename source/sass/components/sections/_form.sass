@@ -1,0 +1,72 @@
+@import './../../variables'
+
+.form-section
+	background: linear-gradient($blue-A, $blue-035)
+	padding-bottom: 20px
+	border: 2px solid $white
+	border-bottom: 2px solid $transparent
+	border-radius: 5px
+	-webkit-box-shadow: 12px 12px 8px -7px rgba(240, 255, 0, 0.42)
+	-moz-box-shadow: 12px 12px 8px -7px rgba(240, 255, 0, 0.42)
+	box-shadow: 12px 12px 8px -7px rgba(240, 255, 0, 0.42)
+
+	&__button-reset,
+	&__button-submit,
+	.input-file-btn
+		color: $white
+		font-weight: 600
+		font-family: $secondary-font
+		text-transform: uppercase
+		border: 1px solid $white
+		padding: 15px
+		border-radius: 5px
+		background: linear-gradient($blue-A, $blue)
+		@include states
+
+	.form__input[type="file"]
+		position: absolute
+		z-index: 0
+		opacity: 0
+		display: block
+		width: 200px
+		height: 100px
+
+		&:hover
+			.input-file-btn
+				opacity: 0.5
+
+.form
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+
+	&__fieldset
+		display: grid
+		text-align: left
+		border: none
+		&:last-of-type
+			grid-column: 1/-1
+			min-width: 50%
+			max-width: 80%
+			margin: 0 auto
+			text-align: center
+		&.radio
+			.form__label
+				display: flex
+				align-items: center
+
+	&__legend
+		font-size: 20px
+		margin-bottom: 10px
+		font-weight: 600
+		font-family: $secondary-font
+
+	&__label
+		display: grid
+
+		&.file
+			position: relative
+
+	.input-file-btn
+		max-width: 200px
+		text-align: center
+		cursor: pointer

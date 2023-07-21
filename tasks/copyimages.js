@@ -1,7 +1,9 @@
 import gulp from 'gulp';
 
 function copyImages1() {
-	return gulp.src('source/img/**/*.{png,jpg}').pipe(gulp.dest('build/img'));
+	return gulp
+		.src(["source/img/**/*.{png,jpg}", "source/img/*.svg"])
+		.pipe(gulp.dest("build/img"));
 }
 
 function copyJimp() {

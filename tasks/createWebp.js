@@ -1,9 +1,9 @@
 import gulp from 'gulp';
 import squoosh from 'gulp-libsquoosh';
 
-function createWebp() {
+async function createWebp() {
 	return gulp
-		.src(['source/img/**/*.{png,jpg}',  'source/images/**/*.{png,jpg}'])
+		.src('source/images/**/*.{png,jpg}')
 		.pipe(
 			squoosh({
 				webp: {},

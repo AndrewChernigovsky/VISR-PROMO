@@ -1,0 +1,95 @@
+@import './../../variables'
+
+.description
+	position: relative
+	&__docs
+		position: absolute
+		left: 50px
+		bottom: 10px
+
+	&__link
+		&:first-of-type
+			&::before
+				content: ''
+				position: absolute
+				width: 50px
+				height: 50px
+				display: block
+				background: center / contain no-repeat url('./../../img/decors/info.png'), $orange
+				background-size: 100%
+				border-radius: 50%
+		&:not(::first-of-type)
+			&::before
+				background-color: $orange
+
+		&.info-first
+			&::before
+				width: 80px
+				height: 80px
+				top: 260px
+				left: 50%
+				transform: translate(-50%, 0)
+				background-color: $yellow
+		&.info-second
+
+			&::before
+				width: 65px
+				height: 65px
+				padding: 5px
+				right: 10px
+				top: auto
+				bottom: 10px
+
+		&:focus::before
+			background-color: red
+
+	&__programme
+		min-height: 300px
+		min-width: 300px
+		display: grid
+		justify-items: center
+		text-align: left
+
+		&::before
+			content: ''
+			width: 150px
+			height: 150px
+			background-color: $white
+			border-radius: 50%
+			display: block
+			margin-bottom: 20px
+			border: 5px solid $orange
+
+	&:first-of-type
+		.description__programme
+			&::before
+				min-width: inherit
+				min-height: inherit
+				background: center / contain no-repeat url('./../../img/decors/education-1.png'), $white
+				background-size: 100%
+				border: 5px solid $yellow
+
+	.image2
+		&::before
+			background: center / contain no-repeat url('./../../img/decors/education-2.png'), $white
+			background-size: 90%
+
+	&__mini
+		display: flex
+		gap: 10px
+
+
+		.description__programme.image3
+			background: linear-gradient(to top, $blue-035, $blue-A)
+			padding: 10px
+
+			&::before
+				background: center / contain no-repeat url('./../../img/decors/education-3.png'), $white
+				background-size: 75%
+				border-radius: 0
+
+	&__inner
+		flex-basis: 70%
+		padding-right: 80px
+
+

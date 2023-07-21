@@ -1,0 +1,43 @@
+.education-section
+	position: relative
+	&__title
+		margin-bottom: 50px
+	&__wrapper
+		display: flex
+		gap: 20px
+		justify-content: space-between
+	&__description
+		min-width: 50%
+		padding: 10px
+		&:first-of-type
+			min-width: 30%
+			background-color: $green-08
+		&:nth-of-type(2) .description__programme
+			justify-items: flex-start
+		&:nth-of-type(2) .description__programme.image2
+			position: relative
+			display: flex
+			justify-content: space-between
+			gap: 20px
+			align-items: center
+			background: linear-gradient(to top, $blue-035, $blue-A)
+			margin-bottom: 20px
+			padding-left: 20px
+
+			&::before
+				width: 250px
+				height: 250px
+	&::before
+		content: ' '
+		display: block
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		opacity: 0.5
+		z-index: -1
+		background-image: url('./../../img/decors/bg-education.png')
+		background-repeat: no-repeat
+		background-position: 50% 0
+		background-size: cover

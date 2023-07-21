@@ -18,26 +18,33 @@ import gulp from 'gulp';
 
 export const build = gulp.series(
 	clean,
-	jimp,
 	copy,
+	gulp.parallel(sass2css, pug2html, scripts)
+);
+
+export const images1 = gulp.series(
+	cleanImages,
+	jimp,
 	copyImages,
-	optimizeImages,
-	fonts,
-	gulp.parallel(sass2css, vendors, pug2html, scripts, svg, sprite, createWebp)
+	svg,
+	sprite
 );
 
 export const images = gulp.series(
-	cleanImages,
-	jimp,
-	copyImages
-)
+	images1,
+	createWebp,
+	optimizeImages
+);
+
+export const vendorTask = gulp.series(
+	vendors,
+	fonts
+);
 
 export default gulp.series(
 	clean,
 	copy,
-	copyImages,
-	fonts,
-	gulp.parallel(sass2css, vendors, pug2html, scripts, svg, sprite, createWebp),
+	gulp.parallel(sass2css, pug2html, scripts),
 	gulp.series(server, watcher)
 );
 

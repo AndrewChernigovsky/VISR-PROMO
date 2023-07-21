@@ -1,0 +1,37 @@
+section.section.form-section
+	h2.secondary-title.form-section__title Записаться
+	.form-section__wrapper
+		.form-section__inner
+			form.form(action="" method="post")
+				fieldset.form__fieldset
+					legend.form__legend Личные данные
+					label.form__label(for="")
+						| Ваше полное имя
+						input.form__input(type="text")
+					label.form__label(for="")
+						| Ваш e-mail
+						input.form__input(type="email")
+					label.form__label(for="")
+						| Ваш телефон
+						input.form__input(type="phone")
+				fieldset.form__fieldset.radio
+					legend.form__legend Предпочитаемый вид связи
+					label.form__label(for="")
+						| Позвонить по телефон
+						input.form__input(type="radio")
+					label.form__label(for="")
+						| Написать на почту
+						input.form__input(type="radio")
+				fieldset.form__fieldset
+					legend.form__legend Документы
+					label.form__label.file(for="")
+						span Загрузите архивом список требуемых документов
+							a.link(href="") посмотреть перечень
+						input.form__input(type="file")
+						span.input-file-btn Выберите файл
+						span.input-file-text Максимум 10мб
+				fieldset.form__fieldset
+					legend.form__legend Задать вопрос
+					textarea(name="", cols="30", rows="10").form__textarea
+			button(type="reset").button.form-section__button-reset Сбросить
+			button(type="submit").button.form-section__button-submit Отправить
