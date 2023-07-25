@@ -1,9 +1,10 @@
 @mixin states-link-button
+	transition: 0.3s ease-in-out
 	&:focus
 		outline: 2px solid red
 	&:focus-visible
 		outline: 2px solid green
 	&:hover
-		outline: 2px solid grey
+		opacity: 0.6
 	&:active
-		outline: 5px solid purple
+		opacity: 0.3

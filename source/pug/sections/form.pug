@@ -3,28 +3,29 @@ section.section.form-section
 	.form-section__wrapper
 		.form-section__inner
 			form.form(action="" method="post")
-				fieldset.form__fieldset
+				fieldset.form__fieldset.personal
 					legend.form__legend Личные данные
-					label.form__label(for="")
+					label.form__label
 						| Ваше полное имя
-						input.form__input(type="text")
-					label.form__label(for="")
+						input.form__input(type="text" placeholder="Иванов Иван Иванович")
+					label.form__label
 						| Ваш e-mail
-						input.form__input(type="email")
-					label.form__label(for="")
+						input.form__input(type="email" placeholder="emailexample@gmail.com")
+					label.form__label
 						| Ваш телефон
-						input.form__input(type="phone")
+						input.form__input(type="phone" placeholder="+79432321221")
 				fieldset.form__fieldset.radio
 					legend.form__legend Предпочитаемый вид связи
-					label.form__label(for="")
-						| Позвонить по телефон
-						input.form__input(type="radio")
-					label.form__label(for="")
-						| Написать на почту
-						input.form__input(type="radio")
-				fieldset.form__fieldset
+					input.form__input(type="radio" name="callback" id='callback-phone' checked)
+					label.form__label(for='callback-phone') Позвонить по телефон
+					input.form__input(type="radio" name="callback" id='callback-email')
+					label.form__label(for='callback-email') Написать на почту
+					input.form__input(type="radio" name="callback" id='callback-email')
+					label.form__label(for='callback-email') Написать на почту
+
+				fieldset.form__fieldset.docs
 					legend.form__legend Документы
-					label.form__label.file(for="")
+					label.form__label.file
 						span Загрузите архивом список требуемых документов
 							a.link(href="") посмотреть перечень
 						input.form__input(type="file")
@@ -33,5 +34,6 @@ section.section.form-section
 				fieldset.form__fieldset
 					legend.form__legend Задать вопрос
 					textarea(name="", cols="30", rows="10").form__textarea
-			button(type="reset").button.form-section__button-reset Сбросить
-			button(type="submit").button.form-section__button-submit Отправить
+				.form__buttons
+					button(type="reset").button.form-section__button-reset Сбросить
+					button(type="submit").button.form-section__button-submit Отправить
