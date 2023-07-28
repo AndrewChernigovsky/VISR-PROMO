@@ -111,6 +111,7 @@
 		height: 52px
 
 	.personal
+		gap: 20px
 		input
 			min-height: 40px
 	.file
@@ -126,6 +127,8 @@
 				outline: none
 				border: none
 				opacity: 0.5
+		input:focus + span
+			border: 1px solid $white
 	&__buttons
 		grid-column: 1 / -1
 		gap: 10px

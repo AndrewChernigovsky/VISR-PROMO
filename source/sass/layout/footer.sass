@@ -1,7 +1,9 @@
 @import './../variables'
-
+@import './../mixins/states/states'
 .footer
 	background: linear-gradient($green-03, $green)
+	border-top: 2px solid $white
+	margin-top: 10px
 
 	&__wrapper
 		padding: 20px
@@ -21,6 +23,12 @@
 			font-size: 22px
 			flex-basis: 20%
 			text-align: left
+
 		.social
-			flex-basis: 30%
+			position: static
+
+			a svg
+				width: 40px
+				height: 40px
+
 

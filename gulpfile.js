@@ -30,6 +30,10 @@ export const images1 = gulp.series(
 	sprite
 );
 
+export const sprite1 = gulp.series(
+	sprite
+);
+
 export const images = gulp.series(
 	images1,
 	createWebp,
