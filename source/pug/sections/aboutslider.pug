@@ -1,20 +1,20 @@
-.swiper.swiper-about#swiper-about
+.swiper-about#swiper-about
 		.swiper-wrapper
 			.swiper-slide(data-desc='1')
 					+picture('img/content/slider-2', 'png', 'сельское хозяйство')
-					//- .swiper-lazy-preloader
+					//- .swiper-about-lazy-preloader
 			.swiper-slide(data-desc='2')
 				+picture('img/content/slider2', 'png', 'сельское хозяйство')
-				//- .swiper-lazy-preloader
+				//- .swiper-about-lazy-preloader
 			.swiper-slide(data-desc='3')
 				+picture('img/content/slider3', 'png', 'сельское хозяйство')
-				//- .swiper-lazy-preloader
+				//- .swiper-about-lazy-preloader
 			.swiper-slide(data-desc='4')
 				+picture('img/content/slider2', 'png', 'сельское хозяйство')
-		.swiper-button-prev
-		.swiper-button-next
+		.swiper-button-prev.swiper-about-button-prev
+		.swiper-button-next.swiper-about-button-next
 
-.swiper.swiper-aboutThumbs(thumbsSlider="")
+.swiper-aboutThumbs(thumbsSlider="")
 	.swiper-wrapper
 		.swiper-slide(data-desc='1')
 			+picture('img/content/slider-2', 'jpg', 'сельское хозяйство')
