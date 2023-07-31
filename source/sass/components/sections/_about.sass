@@ -6,9 +6,9 @@
 		gap: 20px
 		justify-content: space-between
 	&__inner
-		width: 50%
+		width: 100%
 		&:first-of-type
-			display: grid
+			// display: grid
 			gap: 10%
 	&__slide
 		min-height: 200px
@@ -18,7 +18,6 @@
 		padding: 10px
 		display: grid
 		gap: 5%
-
 
 		&:not(:first-of-type)
 			background: linear-gradient($blue-015, $blue-035)
@@ -31,49 +30,46 @@
 
 	.swiper-about
 		overflow: hidden
+
+		.swiper-wrapper
+			margin-bottom: 10px
+
 		.swiper-slide
 			overflow: hidden
 			display: flex
 			align-items: center
+			gap: 20px
 
 			img
 				object-fit: cover
 				min-height: 500px
 
-		// .swiper-slide.swiper-slide-next.swiper-slide-visible,
-		// .swiper-slide.swiper-slide-visible
-		// 	position: relative
-		// 	width: 200px
-		// 	height: 200px
+			.about-description
+				display: grid
+				min-height: 100%
+				gap: 20px
 
-		// 	&::before
-		// 		background: linear-gradient($blue-015, $blue-035)
-		// 		content: ''
-		// 		position: absolute
-		// 		display: block
-		// 		z-index: 1
-		// 		width: 100%
-		// 		height: 100%
-		// 	img
-		// 		object-fit: cover
-		// 		min-height: 200px
+.swiper-aboutThumbs
+	.swiper-wrapper .swiper-slide.swiper-slide-visible.swiper-slide-thumb-active
 
+		position: relative
 
-		// .swiper-slide.swiper-slide-active.swiper-slide-visible.swiper-slide-thumb-active,
-		// .swiper-slide.swiper-slide-next.swiper-slide-visible.swiper-slide-thumb-active,
-		// .swiper-slide.swiper-slide-visible.swiper-slide-thumb-active
-		// 	position: relative
-		// 	&::before
-		// 		background: linear-gradient($green-03, $green-08)
-		// 		content: ''
-		// 		position: absolute
-		// 		display: block
-		// 		z-index: 1
-		// 		width: 100%
-		// 		height: 100%
-		// .swiper-container.gallery-thumbs
-		// 	.swiper-wrapper
-		// 		height: 200px
+		&::after
+			content: ''
+			position: absolute
+			display: block
+			width: 100%
+			height: 100%
+			bottom: 0
+			left: 0
+			background-color: $green-03
+			z-index: 10
 
-.swiper-about .swiper-slide-thumb-active
-	opacity: 1
+	.swiper-slide
+		height: auto
+		cursor: pointer
+
+		img
+			height: 200px
+			position: relative
+			z-index: 0

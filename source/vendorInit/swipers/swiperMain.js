@@ -8,10 +8,9 @@ const swiperMain = new Swiper('.swiper-main', {
 	loop: true,
 	preloadImages: true,
 	autoplay: {
-		delay: 3500,
+		delay: 300500,
 		disableOnInteraction: false,
 	},
-	// centerInsufficientSlides: true,
 	pagination: {
 		el: '.swiper-pagination',
 		type: 'bullets',

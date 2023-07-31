@@ -1,19 +1,27 @@
 const swiperAboutEl = document.getElementById('swiper-about');
 
+let galleryThumbs = new Swiper(".swiper-aboutThumbs", {
+	spaceBetween: 10,
+	slidesPerView: 4,
+	freeMode: true,
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
+});
+
 const swiperAbout = new Swiper(swiperAboutEl, {
-	slidesPerView: 'auto',
+	slidesPerView: "auto",
 	spaceBetween: 0,
 	speed: 800,
 	grabCursor: true,
 	loop: false,
 	preloadImages: true,
 	autoplay: {
-		delay: 7000,
+		delay: 700000,
 		disableOnInteraction: false,
 	},
 	navigation: {
-		nextEl: '.swiper-about-button-next',
-		prevEl: '.swiper-about-button-prev',
+		nextEl: ".swiper-about-button-next",
+		prevEl: ".swiper-about-button-prev",
 	},
 	multipleActiveThumbs: false,
 	breakpoints: {
@@ -28,8 +36,10 @@ const swiperAbout = new Swiper(swiperAboutEl, {
 		// },
 	},
 	on: {
-		slideChange() {
-		}
+		slideChange() {},
+	},
+	thumbs: {
+		swiper: galleryThumbs,
 	},
 });
 const swiperAboutTh = new Swiper(".swiper-aboutThumbs", {
@@ -43,5 +53,6 @@ const swiperAboutTh = new Swiper(".swiper-aboutThumbs", {
 swiperAbout.on("slideChange", () => {
 	swiperAboutTh.slideTo(swiperAbout.activeIndex);
 });
+
 
 export default {swiperAbout};

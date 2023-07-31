@@ -5,6 +5,22 @@
 	min-width: 100%
 	min-height: 50px
 	padding: 10px 20px
+	position: relative
+
+	.button-menu
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		border: none
+		position: absolute
+		top: 0
+		left: -20px
+		background-color: transparent
+		z-index: 13
+		cursor: pointer
+
+		@media screen and (min-width: 768px)
+			display: none
 
 	&__list
 		list-style-type: none
@@ -16,11 +32,75 @@
 		&-item
 			&:not(:last-of-type)
 				margin-right: 10px
+
 		&-link
 			text-decoration: none
-			font-size: 26px
-			line-height: 28px
+			font-size: 18px
+			line-height: 20px
 			@include primary-text
 			@include states
+			@media screen and (min-width: 768px)
+				font-size: 22px
+				line-height: 24px
+			@media screen and (min-width: 1024px)
+				font-size: 26px
+				line-height: 28px
 			&.base-text
 				color: $white
+
+.navigation.no-js
+	.button-menu
+		&::after
+			content: ''
+			position: absolute
+			background-color: $white
+			width: 20px
+			height: 2px
+			box-shadow: 0 8px 0 $white, 0 -8px 0 $white
+
+		&:hover
+			opacity: 0.8
+	.navigation__wrapper
+		display: none
+
+		@media screen and (min-width: 768px)
+			display: block
+
+.navigation.js-active
+	.button-menu
+		position: fixed
+
+		&::before,
+		&::after
+			left: 30px
+			top: 20px
+			content: ''
+			position: absolute
+			background-color: $white
+			width: 20px
+			height: 2px
+
+		&::before
+			transform: rotate(-45deg)
+
+		&::after
+			transform: rotate(45deg)
+
+		&:hover
+			opacity: 0.8
+
+	.navigation__wrapper
+		display: block
+		position: fixed
+		z-index: 12
+		background-color: red
+		padding: 20px
+		min-width: 100%
+		min-height: 100%
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+		ul
+			display: grid
+			gap: 10px
