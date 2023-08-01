@@ -37,8 +37,12 @@
 
 .form
 	display: grid
-	grid-template-columns: 1fr 1fr 1fr
+	gap: 20px
+	grid-template-columns: 1fr
+	margin: 0 auto
 
+	@media screen and (min-width: 1024px)
+		grid-template-columns: 1fr 1fr 1fr
 	&__fieldset
 		display: grid
 		text-align: left
@@ -47,10 +51,13 @@
 		align-content: start
 		&:last-of-type
 			grid-column: 1/-1
-			min-width: 50%
-			max-width: 80%
+			min-width: 100%
 			margin: 0 auto
 			text-align: center
+
+			@media screen and (min-width: 1024px)
+				min-width: 50%
+				max-width: 80%
 		&.radio
 			gap: 20px
 			align-content: center

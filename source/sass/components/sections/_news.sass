@@ -1,10 +1,18 @@
 .news-section
 
 .news
-	display: flex
-	align-content: flex-start
+	display: grid
+	grid-template-columns: 1fr
 	gap: 20px
-	flex-wrap: wrap
+
+	@media screen and (min-width: 768px)
+		grid-template-columns: 1fr 1fr
+
+	@media screen and (min-width: 1024px)
+		grid-template-columns: 1fr 1fr 1fr 1fr
+
+	&__inner
+		position: relative
 
 	&__title
 		text-transform: uppercase
@@ -29,6 +37,15 @@
 		margin: 0 auto
 		flex-basis: 23.5%
 
+		&:nth-of-type(odd)
+			text-align: right
+
+		img
+			height: 200px
+
+			@media screen and (min-width: 768px)
+				height: auto
+
 		.link
 			color: $white
 			display: flex
@@ -40,7 +57,7 @@
 				bottom: 10px
 				left: 50%
 				transform: translate(-50%, 0)
-				min-width: 100%
+				min-width: 93%
 				padding: 0 20px
 
 				&::after
@@ -65,8 +82,8 @@
 			padding: 4px
 			background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4))
 			position: absolute
-			top: 295px
-			left: 10px
+			top: -40px
+			left: 0
 			-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)
 			-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)
 			box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)

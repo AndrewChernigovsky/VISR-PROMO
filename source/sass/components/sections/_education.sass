@@ -3,12 +3,16 @@
 	&__title
 		margin-bottom: 50px
 	&__wrapper
-		display: flex
-		gap: 20px
-		justify-content: space-between
+		display: grid
+		gap: 10px
+		padding: 10px
+
+		@media screen and (min-width: 1024px)
+			display: flex
+			justify-content: space-between
+
 	&__description
 		min-width: 50%
-		padding: 10px
 		&:first-of-type
 			min-width: 30%
 			background-color: $green-08
@@ -16,7 +20,7 @@
 			justify-items: flex-start
 		&:nth-of-type(2) .description__programme.image2
 			position: relative
-			display: flex
+			display: grid
 			justify-content: space-between
 			gap: 20px
 			align-items: center
@@ -24,9 +28,17 @@
 			margin-bottom: 20px
 			padding-left: 20px
 
+			@media screen and (min-width: 1024px)
+				display: flex
+
 			&::before
-				width: 250px
-				height: 250px
+				width: 150px
+				height: 150px
+
+				@media screen and (min-width: 1024px)
+					width: 250px
+					height: 250px
+
 	&::before
 		content: ' '
 		display: block
