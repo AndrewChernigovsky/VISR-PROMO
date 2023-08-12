@@ -4,7 +4,8 @@
 
 	&__wrapper
 		padding: 20px
-		background: linear-gradient($blue-A, $blue-035)
+		// background: linear-gradient($blue-A, $blue-035)
+		background: linear-gradient($green1, $green1-03)
 		border: 2px solid $white
 		border-bottom: 2px solid $transparent
 		border-radius: 5px
@@ -22,7 +23,8 @@
 		border: 1px solid $white
 		padding: 15px
 		border-radius: 5px
-		background: linear-gradient($blue-A, $blue)
+		// background: linear-gradient($blue-A, $blue)
+		background: linear-gradient($green2, $green1-03)
 		@include states
 
 	.form__input[type="file"]
@@ -105,7 +107,7 @@
 				height: 25px
 				opacity: 1
 				z-index: 2
-				background-color: $blue
+				background: radial-gradient($green2, $green1)
 				border-radius: 50%
 				right: 0px
 				top: -3px
@@ -121,6 +123,12 @@
 		gap: 20px
 		input
 			min-height: 40px
+			font-size: 20px
+			padding-left: 10px
+
+	&__textarea
+		margin-bottom: 10px
+
 	.file
 		gap: 20px
 
@@ -140,3 +148,75 @@
 		grid-column: 1 / -1
 		gap: 10px
 		min-width: 100%
+
+		.wrap
+			height: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+
+			.button
+				min-width: 280px
+				min-height: 60px
+				text-transform: uppercase
+				background: linear-gradient($green2, $green1-03)
+				border: none
+				border-radius: 1000px
+				box-shadow: 12px 12px 24px $green1
+				transition: all 0.3s ease-in-out 0s
+				cursor: pointer
+				outline: none
+				position: relative
+				padding: 10px
+
+				&::before
+					content: ''
+					border-radius: 1000px
+					min-width: calc(300px + 12px)
+					min-height: calc(60px + 12px)
+					border: 6px solid $green
+					box-shadow: 0 0 60px $green-03
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					opacity: 0
+					transition: all .3s ease-in-out 0s
+
+				&:hover,
+				&:focus
+					color: $yellow
+					border: 2px solid $yellow
+					transform: translateY(-6px)
+
+				&:hover::before,
+				&:focus::before
+					opacity: 1
+
+				&::after
+					content: ''
+					width: 10px
+					height: 10px
+					border-radius: 100%
+					border: 6px solid #ffffff
+					position: absolute
+					z-index: -1
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					animation: ring 2.5s infinite
+
+				&:hover::after,
+				&:focus::after
+					animation: none
+					display: none
+
+				@keyframes ring
+					0%
+						width: 30px
+						height: 30px
+						opacity: 1
+					100%
+						width: 150px
+						height: 150px
+						opacity: 0

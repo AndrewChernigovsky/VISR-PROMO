@@ -22,7 +22,7 @@
 				width: 50px
 				height: 50px
 				display: block
-				background: center / contain no-repeat url('./../../img/decors/info.png'), $orange
+				background: center / contain no-repeat url('./../../img/sprite.svg#education-1'), $orange
 				background-size: 100%
 				border-radius: 50%
 				bottom: 0
@@ -60,12 +60,15 @@
 
 	&__programme
 		min-height: 300px
-		min-width: 300px
+		min-width: 100%
 		display: grid
 		justify-items: center
 		text-align: left
 		position: relative
 		padding: 10px
+
+		@media screen and (min-width: 424px)
+			min-width: 280px
 
 		&::before
 			content: ''
@@ -84,7 +87,7 @@
 	&:first-of-type
 		.description__programme
 			&::before
-				background: center / contain no-repeat url('./../../img/decors/education-1.png'), $white
+				background: center / contain no-repeat url('../img/icons/gifs/books.gif'), $white
 				background-size: 100%
 				border: 5px solid $yellow
 
@@ -98,8 +101,9 @@
 	.image2
 
 		&::before
-			background: center / contain no-repeat url('./../../img/decors/education-2.png'), $white
+			background: center / contain no-repeat url('./../../img/icons/gifs/book.gif'), $white
 			background-size: 90%
+
 
 	&__mini
 		display: grid
@@ -112,8 +116,17 @@
 		.description__programme.image3
 			background: linear-gradient(to top, $blue-035, $blue-A)
 
+			&:nth-of-type(2)
+				&::before
+					background: center / contain no-repeat url('./../../img/icons/gifs/globe-earth.gif'), $white
+
+
+			&:nth-of-type(3)
+				&::before
+					background: center / contain no-repeat url('./../../img/icons/gifs/microscope.gif'), $white
+
 			&::before
-				background: center / contain no-repeat url('./../../img/decors/education-3.png'), $white
+				background: center / contain no-repeat url('./../../img/icons/gifs/chemistry.gif'), $white
 				background-size: 75%
 				border-radius: 0
 

@@ -13,7 +13,7 @@ import watcher from './tasks/watcher.js';
 import svg from './tasks/svg.js';
 import sprite from './tasks/sprite.js';
 import fonts from './tasks/fonts.js';
-import jimp from './tasks/jimp.js';
+import sharp from './tasks/sharp.js';
 import gulp from 'gulp';
 
 export const build = gulp.series(
@@ -24,15 +24,19 @@ export const build = gulp.series(
 
 export const images1 = gulp.series(
 	cleanImages,
-	jimp,
-	copyImages,
-	svg,
-	sprite
+	sharp,
+	copyImages
 );
 
-export const sprite1 = gulp.series(
-	sprite
+export const sprite1 = gulp.series(svg, sprite);
+
+export const sharp1 = gulp.series(
+	cleanImages,
+	sharp,
+	createWebp,
+	sprite1
 );
+
 
 export const images = gulp.series(
 	images1,

@@ -3,7 +3,7 @@ import squoosh from 'gulp-libsquoosh';
 
 async function createWebp() {
 	return gulp
-		.src('source/images/**/*.{png,jpg}')
+		.src('build/img/**/*.{png,jpg}')
 		.pipe(
 			squoosh({
 				webp: {},

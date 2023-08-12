@@ -16,7 +16,7 @@ const swiperAbout = new Swiper(swiperAboutEl, {
 	loop: false,
 	preloadImages: true,
 	autoplay: {
-		delay: 700000,
+		delay: 10000,
 		disableOnInteraction: false,
 	},
 	navigation: {

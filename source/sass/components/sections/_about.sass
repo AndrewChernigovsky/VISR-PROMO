@@ -1,4 +1,9 @@
 .about-section
+	display: none
+
+	@media screen and (min-width: 1024px)
+		display: block
+
 	&__title
 		margin-bottom: 50px
 	&__wrapper
@@ -14,8 +19,8 @@
 	&__inner
 		width: 100%
 		&:first-of-type
-			// display: grid
 			gap: 10%
+
 	&__slide
 		min-height: 200px
 	&__description
@@ -37,6 +42,7 @@
 
 .swiper-about
 	overflow: hidden
+
 
 	.swiper-wrapper
 		margin-bottom: 10px
@@ -69,6 +75,7 @@
 				@media screen and (min-width: 768px)
 					display: grid
 					min-height: 100%
+					flex-basis: 150%
 
 
 			@media screen and (min-width: 1024px)

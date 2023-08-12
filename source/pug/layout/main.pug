@@ -11,6 +11,13 @@ html(lang="en")
 		link(rel="stylesheet", href=`${nameCss}`)
 		script(src=`${nameScriptVendors}` type='module' defer)
 	body
+		noscript
+			div(style="min-width: 100%; min-height:100%; background-color: white; position: fixed; z-index: 100; display: flex; align-items: center; justify-content: center; flex-direction: column;")
+				h1(style="color: black; font-size:60px;") Включите пожалуйста Javascript
+				p(style="color: black; font-size:40px;") Ваш браузер устарел, установите последнию версию
+				a(href="https://www.google.com/intl/ru/chrome/update/")
+					span(style="display:block; width:160px; height:160px;  background-position: 0px -320px; background-image: url('https://sun9-64.userapi.com/z-b3Lt-FUb8UfMl209s1EB_0Colx6SjgM8ss9g/NTQrhHbDN2g.png');")
+					span(style="color: black; font-size:40px;") Chrome
 		.container
 			block header
 

@@ -14,7 +14,7 @@ body
 	font-family: $primary-font
 	background-color: $green-03
 	background-position: center
-	background-image: url('../../img/decors/bg-image.png')
+	background-image: url('../../img/decors/global/bg-image-large.png')
 	background-size: contain
 	margin: 0
 	background-repeat: repeat
@@ -33,6 +33,9 @@ body
 		bottom: 0
 		right: 0
 		z-index: 1
+
+body.js-active-open
+	overflow: hidden
 
 .container
 	display: flex
@@ -82,13 +85,18 @@ a
 		height: 100px
 		display: inline-block
 
+
 img
 	max-width: 100%
 	object-fit: contain
+	display: block
 
 .section
 	color: $white
 	text-align: center
+
+	div.no-view
+		// display: none
 
 	@include section
 
@@ -96,6 +104,10 @@ img
 		color: $white
 		font-family: $secondary-font
 		text-shadow: 2px 2px 2px $black
+
+.section.view
+	div.no-view
+		display: flex
 
 .secondary-title
 	text-transform: uppercase

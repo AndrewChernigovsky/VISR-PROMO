@@ -4,7 +4,7 @@ import svgstore from 'gulp-svgstore';
 import rename from 'gulp-rename';
 import cheerio from 'gulp-cheerio'
 
-function sprite() {
+async function sprite() {
 	return gulp
 		.src('source/img/icons/*.svg')
 		.pipe(svgo())

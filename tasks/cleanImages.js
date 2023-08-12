@@ -1,7 +1,7 @@
 import del from "del";
 
 async function cleanImages() {
-	return del(["./build/img/**", "source/images"], { force: true });
+	return del(["./build/img/**"], { force: true });
 }
 
 export default cleanImages;
