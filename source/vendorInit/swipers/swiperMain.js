@@ -8,7 +8,7 @@ const swiperMain = new Swiper('.swiper-main', {
 	loop: true,
 	preloadImages: true,
 	autoplay: {
-		delay: 5000,
+		delay: 100000,
 		disableOnInteraction: false,
 	},
 	pagination: {
