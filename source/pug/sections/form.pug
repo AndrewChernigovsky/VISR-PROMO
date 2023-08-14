@@ -7,13 +7,13 @@ section.section.form-section
 					legend.form__legend Личные данные
 					label.form__label
 						| Ваше полное имя
-						input.form__input(type="text" placeholder="Иванов Иван Иванович")
+						input.form__input(type="text" placeholder="Иванов Иван Иванович" required)
 					label.form__label
 						| Ваш e-mail
-						input.form__input(type="email" placeholder="emailexample@gmail.com")
+						input.form__input(type="email" placeholder="emailexample@gmail.com" required)
 					label.form__label
 						| Ваш телефон
-						input.form__input(type="phone" placeholder="+79432321221")
+						input.form__input(type="phone" placeholder="+79432321221" required)
 				fieldset.form__fieldset.radio
 					legend.form__legend Предпочитаемый вид связи
 					input.form__input(type="radio" name="callback" id='callback-phone' checked)
