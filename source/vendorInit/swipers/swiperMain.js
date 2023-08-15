@@ -5,10 +5,10 @@ const swiperMain = new Swiper('.swiper-main', {
 	// centeredSlides: true,
 	grab: true,
 	grabCursor: true,
-	// loop: true,
+	loop: true,
 	preloadImages: true,
 	autoplay: {
-		delay: 5000,
+		delay: 4000,
 		disableOnInteraction: false,
 	},
 	pagination: {

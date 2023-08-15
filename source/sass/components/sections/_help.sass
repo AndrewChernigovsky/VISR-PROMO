@@ -1,0 +1,97 @@
+.chat
+	position: fixed
+	left: -175px
+	top: 50%
+	transform: translate(-50%, 0)
+	background-color: white
+	min-width: 100px
+	min-height: 300px
+	transition: 0.3s ease-in-out
+	cursor: pointer
+
+	&:hover,
+	&:focus,
+	&:active
+		left: 190px
+
+	&__wrapper
+		position: relative
+		min-height: inherit
+		min-width: inherit
+		padding: 20px 40px 20px 20px
+
+		form
+			display: grid
+
+			button
+				border: 2px solid $transparent
+				background: none
+				text-transform: uppercase
+				font-weight: 700
+				min-height: 40px
+				transition: 0.3s ease-in-out
+				cursor: pointer
+				background: linear-gradient($green, $green2)
+				color: $white
+
+				&:hover
+					opacity: 0.8
+
+
+		textarea
+			padding: 20px
+			margin-bottom: 20px
+
+		label
+			margin-bottom: 10px
+
+	&__title
+		margin-bottom: 20px
+		font-weight: 600
+
+		p
+			text-transform: uppercase
+
+.chat-help
+	position: absolute
+	right: -160px
+	bottom: 130px
+	width: 320px
+	padding: 10px
+	background-color: $green
+	transform: rotate(90deg)
+	color: $white
+	text-transform: uppercase
+	box-shadow: -2px -4px 6px $white
+
+.whatsapp
+	position: fixed
+	bottom: 0
+	z-index: 12
+	width: 100px
+	height: 100px
+	object-fit: contain
+	display: block
+
+.btn-up
+	position: fixed
+	bottom: 20px
+	z-index: 12
+	right: 0
+	height: 50px
+	width: 50px
+	object-fit: contain
+	display: block
+	background-image: url(./../img/icons-inline/up-arrow.svg)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: contain
+	transition: 0.3s ease-in-out
+
+	a
+		width: inherit
+		height: inherit
+		display: block
+
+	&:hover
+		opacity: 0.8

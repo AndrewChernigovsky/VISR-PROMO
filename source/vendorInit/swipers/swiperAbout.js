@@ -13,10 +13,10 @@ const swiperAbout = new Swiper(swiperAboutEl, {
 	spaceBetween: 0,
 	speed: 800,
 	grabCursor: true,
-	loop: false,
+	loop: true,
 	preloadImages: true,
 	autoplay: {
-		delay: 10000,
+		delay: 4000,
 		disableOnInteraction: false,
 	},
 	navigation: {

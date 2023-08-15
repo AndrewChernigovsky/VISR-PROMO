@@ -14,7 +14,6 @@ const pathsCSS = {
 
 const pathsJS = {
 	swiper: "./node_modules/swiper/swiper-bundle.min.js",
-	// swiper1: "./node_modules/swiper/swiper.css",
 };
 
 function arr(a) {

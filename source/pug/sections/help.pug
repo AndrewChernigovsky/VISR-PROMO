@@ -1,0 +1,19 @@
+.help
+	.chat#chat
+		.chat__wrapper
+			.chat__title
+				p Напишите ваш Вопрос
+				span Мы свяжемся с вами через 2 минуты
+			form(action="" method="POST")
+				label(for="chat-msg") Введите ваше сообщение
+				textarea(type="text" id="chat-msg" required maxlength="400")
+				button(type="submit") Отправить
+			.chat-help
+				p Есть вопрос? Потяните
+
+	.whatsapp
+		a(title="Whatsapp" href="whatsapp://send?phone=+996555034422")
+			img(src="./img/icons-inline/whatsAppBtn.svg" alt="Написать в Whatsapp")
+
+	.btn-up
+		a(href="#")
