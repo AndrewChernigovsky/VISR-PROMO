@@ -44,7 +44,6 @@
 .swiper-about
 	overflow: hidden
 
-
 	.swiper-wrapper
 		margin-bottom: 10px
 
@@ -83,7 +82,12 @@
 				display: flex
 
 .swiper-aboutThumbs
-	.swiper-wrapper .swiper-slide.swiper-slide-visible.swiper-slide-thumb-active
+	display: flex
+	width: $widthThumbs
+
+	.swiper-wrapper
+		gap: 10px
+		.swiper-slide-thumb-active
 
 		position: relative
 
@@ -101,6 +105,7 @@
 	.swiper-slide
 		height: auto
 		cursor: pointer
+		flex-basis: 24.5%
 
 		img
 			height: 70px

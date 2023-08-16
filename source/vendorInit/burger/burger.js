@@ -5,15 +5,18 @@ let navLinks = document.querySelectorAll('.navigation__list-link');
 let classActive = 'js-active-open';
 let classNoActive = 'no-js';
 
-button.addEventListener('click', function () {
-	burgerNav.classList.toggle(classActive);
-	burgerNav.classList.toggle(classNoActive);
-	body.classList.toggle(classActive);
-})
+export function burger() {
+	console.log('12313');
+	button.addEventListener('click', function () {
+		burgerNav.classList.toggle(classActive);
+		burgerNav.classList.toggle(classNoActive);
+		body.classList.toggle(classActive);
+	})
 
-navLinks.forEach((el) => {
-	el.addEventListener("click", function () {
-		burgerNav.classList.remove(classActive);
-		burgerNav.classList.add(classNoActive);
+	navLinks.forEach((el) => {
+		el.addEventListener("click", function () {
+			burgerNav.classList.remove(classActive);
+			burgerNav.classList.add(classNoActive);
+		});
 	});
-});
+}

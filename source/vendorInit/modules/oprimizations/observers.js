@@ -69,7 +69,7 @@ const objObservers = {
 			});
 		},
 		options: {
-			rootMargin: "0px 100px 75px 0px",
+			rootMargin: "0px 0px 75px 0px",
 			threshold: 1,
 		},
 		observerInit: function () {
@@ -200,7 +200,7 @@ const objObservers = {
 
 const {
 	mainSliderVideos,
-	sections,
+	// sections,
 	// aboutSliderVideos,
 	images,
 	videos
@@ -208,7 +208,7 @@ const {
 
 export function observe() {
 	mainSliderVideos.observerItems();
-	sections.observerItems();
+	// sections.observerItems();
 	// aboutSliderVideos.observerItems();
 	images.observerItems();
 	videos.observerItems();

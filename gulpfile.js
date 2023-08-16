@@ -44,6 +44,11 @@ export const images = gulp.series(
 	optimizeImages
 );
 
+export const webp
+	= gulp.series(
+	createWebp
+);
+
 export const vendorTask = gulp.series(
 	vendors,
 	fonts
